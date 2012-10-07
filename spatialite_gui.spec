@@ -1,4 +1,3 @@
-# $Revision: 1.21 $, $Date: 2011/07/16 18:25:43 $
 Summary:	Graphical User Interface tool supporting SpatiaLite
 Summary(pl.UTF-8):	Graficzny interfejs użytkownika obsługujący bazy SpatiaLite
 Name:		spatialite_gui

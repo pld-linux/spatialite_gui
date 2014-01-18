@@ -2,11 +2,12 @@ Summary:	Graphical User Interface tool supporting SpatiaLite
 Summary(pl.UTF-8):	Graficzny interfejs użytkownika obsługujący bazy SpatiaLite
 Name:		spatialite_gui
 Version:	1.7.1
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		Applications/Databases
 Source0:	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/%{name}-%{version}.tar.gz
 # Source0-md5:	c917f40810607784528b4db58cd36efb
+Patch0:		wxWidgets3.patch
 URL:		https://www.gaia-gis.it/fossil/spatialite_gui
 BuildRequires:	freexl-devel
 BuildRequires:	geos-devel
@@ -27,11 +28,13 @@ Graficzny interfejs użytkownika obsługujący bazy SpatiaLite.
 
 %prep
 %setup -q
+%patch0 -p1
 
 mkdir wx-bin
 ln -sf /usr/bin/wx-gtk2-unicode-config wx-bin/wx-config
 
 %build
+%{__autoconf}
 # configure refers to wx-config with no option to override
 PATH=$(pwd)/wx-bin:$PATH
 %configure

@@ -1,0 +1,11 @@
+--- spatialite_gui-1.7.1/Makefile.am~	2013-06-29 08:29:11.000000000 +0000
++++ spatialite_gui-1.7.1/Makefile.am	2015-07-19 08:55:38.773124523 +0000
+@@ -13,7 +13,7 @@
+ 	TextCsv.cpp Wfs.cpp
+ 
+ LDADD = @WX_LIBS@ @LIBGAIAGRAPHICS_LIBS@ @LIBSPATIALITE_LIBS@ \
+-	@LIBFREEXL_LIBS@ @LIBXML2_LIBS@
++	@LIBFREEXL_LIBS@ @LIBXML2_LIBS@ -lsqlite3
+ 
+ EXTRA_DIST = Makefile-static-MinGW \
+         Makefile-static-Linux \

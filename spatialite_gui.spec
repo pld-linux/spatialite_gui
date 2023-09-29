@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Graficzny interfejs użytkownika obsługujący bazy SpatiaLit
 Name:		spatialite_gui
 %define	beta	beta1
 Version:	2.1.0
-Release:	0.%{beta}.1
+Release:	0.%{beta}.2
 License:	GPL v3+
 Group:		Applications/Databases
 Source0:	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/%{name}-%{version}-%{beta}.tar.gz
@@ -43,6 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_iconsdir}/hicolor/40x40
 
 %clean
 rm -rf $RPM_BUILD_ROOT

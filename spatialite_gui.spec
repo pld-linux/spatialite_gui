@@ -44,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_iconsdir}/hicolor/40x40
+%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/hicolor/40x40
 
 %clean
 rm -rf $RPM_BUILD_ROOT

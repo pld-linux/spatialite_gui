@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Graficzny interfejs użytkownika obsługujący bazy SpatiaLit
 Name:		spatialite_gui
 %define	beta	beta1
 Version:	2.1.0
-Release:	0.%{beta}.3
+Release:	0.%{beta}.4
 License:	GPL v3+
 Group:		Applications/Databases
 Source0:	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/%{name}-%{version}-%{beta}.tar.gz
@@ -11,8 +11,7 @@ Source0:	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/%{name}-%{versi
 URL:		https://www.gaia-gis.it/fossil/spatialite_gui
 BuildRequires:	freexl-devel
 BuildRequires:	geos-devel
-BuildRequires:	libgaiagraphics-devel
-BuildRequires:	libspatialite-devel
+BuildRequires:	librasterlite2-devel
 BuildRequires:	libstdc++-devel
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig

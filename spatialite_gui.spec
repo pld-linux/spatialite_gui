@@ -2,8 +2,9 @@ Summary:	Graphical User Interface tool supporting SpatiaLite
 Summary(pl.UTF-8):	Graficzny interfejs użytkownika obsługujący bazy SpatiaLite
 Name:		spatialite_gui
 %define	beta	beta1
+%define	rel	6
 Version:	2.1.0
-Release:	0.%{beta}.5
+Release:	0.%{beta}.%{rel}
 License:	GPL v3+
 Group:		Applications/Databases
 Source0:	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/%{name}-%{version}-%{beta}.tar.gz

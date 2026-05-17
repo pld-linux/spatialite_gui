@@ -2,7 +2,7 @@ Summary:	Graphical User Interface tool supporting SpatiaLite
 Summary(pl.UTF-8):	Graficzny interfejs użytkownika obsługujący bazy SpatiaLite
 Name:		spatialite_gui
 %define	beta	beta1
-%define	rel	6
+%define	rel	7
 Version:	2.1.0
 Release:	0.%{beta}.%{rel}
 License:	GPL v3+
@@ -10,16 +10,27 @@ Group:		Applications/Databases
 Source0:	http://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/%{name}-%{version}-%{beta}.tar.gz
 # Source0-md5:	9e8157f68c1f9ef77c31b229936b147f
 URL:		https://www.gaia-gis.it/fossil/spatialite_gui
+BuildRequires:	curl-devel
 BuildRequires:	freexl-devel
 BuildRequires:	geos-devel
 BuildRequires:	librasterlite2-devel
+BuildRequires:	libspatialite-devel
 BuildRequires:	libstdc++-devel
+BuildRequires:	libxlsxwriter-devel
+BuildRequires:	libwebp-devel
 BuildRequires:	libxml2-devel >= 2.0
+BuildRequires:	lz4-devel
+BuildRequires:	minizip-devel
+BuildRequires:	openjpeg2-devel >= 2
 BuildRequires:	pkgconfig
+BuildRequires:	postgresql-devel
 BuildRequires:	proj-devel >= 4
-BuildRequires:	sqlite3-devel
+BuildRequires:	sqlite3-devel >= 3
 BuildRequires:	virtualpg-devel
 BuildRequires:	wxGTK3-unicode-devel
+BuildRequires:	xz-devel
+BuildRequires:	zstd-devel
+Requires:	hicolor-icon-theme >= 0.17-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,8 +44,7 @@ Graficzny interfejs użytkownika obsługujący bazy SpatiaLite.
 
 %build
 %configure \
-	--with-wxconfig=/usr/bin/wx-gtk3-unicode-config \
-	--disable-xlsxwriter
+	--with-wxconfig=/usr/bin/wx-gtk3-unicode-config
 
 %{__make}
 
@@ -43,8 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-%{__rm} -r $RPM_BUILD_ROOT%{_iconsdir}/hicolor/40x40
 
 %clean
 rm -rf $RPM_BUILD_ROOT
